@@ -1,0 +1,89 @@
+/* Estilos Generales */
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinea el contenido al fondo */
+    height: 100vh;
+    background-color: #87CEEB; /* Cielo azul */
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.garden {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Ajusta la altura según sea necesario */
+    overflow: visible;
+}
+
+/* Estilos Base para las Flores */
+.flower {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    animation: grow 2s ease-in forwards;
+}
+
+/* Cabeza de la Flor */
+.head {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--flower-color);
+}
+
+/* Tallo de la Flor */
+.stem {
+    width: 4px;
+    height: 150px;
+    background-color: green;
+    margin-top: 5px;
+}
+
+/* Estilos Específicos para Tulipán, Rosa y Girasol */
+.tulip .head {
+    background-color: #800080; /* Morado */
+}
+
+.rose .head {
+    background-color: red; /* Rojo */
+}
+
+.sunflower .head {
+    background-color: yellow; /* Amarillo */
+}
+
+/* Animación para el Crecimiento de la Flor */
+@keyframes grow {
+    to {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+/* Animación de Dibujo del Tulipán */
+@keyframes drawTulip {
+    from {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    to {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+/* Estilos para el Mensaje */
+.message {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #4B0082; /* Índigo */
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
