@@ -1,0 +1,197 @@
+/* Estilos generales */
+/* Estilos generales */
+body {
+    margin: 0;
+    background-color: #87CEEB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.garden {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 50px;
+}
+
+/* Tulipanes */
+.tulip {
+    position: relative;
+    width: 30px;
+    height: 60px;
+    background-color: #800080; /* Morado */
+    border-radius: 15px 15px 0 0;
+    margin: 0 15px;
+    opacity: 0;
+    animation: grow 2s forwards;
+    box-shadow: inset 0 -10px 10px rgba(0, 0, 0, 0.2); /* Sombras internas para detalle */
+}
+
+.tulip::before {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 80px;
+    background-color: #228B22; /* Verde */
+    border-radius: 2px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra para el tallo */
+}
+
+/* Pétalos adicionales para el tulipán */
+.tulip::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 30px;
+    background-color: #800080;
+    border-radius: 15px 15px 0 0;
+    box-shadow: inset 0 -5px 5px rgba(0, 0, 0, 0.2); /* Sombra para los pétalos */
+}
+
+/* Rosas */
+.rose {
+    position: relative;
+    width: 50px; /* Aumentado el tamaño de las rosas */
+    height: 50px; /* Aumentado el tamaño de las rosas */
+    background-color: #FF0000; /* Rojo */
+    border-radius: 50%;
+    margin: 0 15px;
+    opacity: 0;
+    animation: grow 2s forwards;
+    box-shadow: inset 0 -10px 10px rgba(0, 0, 0, 0.2); /* Sombras internas para detalle */
+}
+
+.rose::before {
+    content: '';
+    position: absolute;
+    bottom: -120px; /* Aumentado para que el tallo sea más largo */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px; /* Tallo más grueso */
+    height: 120px; /* Tallo más largo */
+    background-color: #006400; /* Verde oscuro */
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra para el tallo */
+}
+
+/* Pétalos adicionales para la rosa */
+.rose::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #FF6347; /* Un tono más claro para contraste */
+    border-radius: 50%;
+    box-shadow: inset 0 -5px 5px rgba(0, 0, 0, 0.2); /* Sombra para los pétalos */
+}
+
+/* Girasoles */
+.sunflower {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #FFD700; /* Amarillo */
+    border-radius: 50%;
+    margin: 0 15px;
+    opacity: 0;
+    animation: grow 2s forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 -10px 10px rgba(0, 0, 0, 0.2); /* Sombras internas para detalle */
+}
+
+.sunflower::before {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 100px;
+    background-color: #556B2F; /* Verde oliva oscuro */
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra para el tallo */
+}
+
+/* Pétalos adicionales para el girasol */
+.sunflower::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: #8B4513; /* Marrón */
+    border-radius: 50%;
+}
+
+/* Hojas para los tallos */
+.rose::before,
+.tulip::before,
+.sunflower::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 10px;
+    background-color: #228B22;
+    border-radius: 10px;
+    top: 20px;
+    left: -20px;
+    transform: rotate(-45deg);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra para las hojas */
+}
+
+.rose::before {
+    top: 40px; /* Ajustado para que las hojas estén más abajo */
+    left: -25px;
+    transform: rotate(-45deg);
+}
+
+.tulip::before {
+    top: 20px;
+    left: -20px;
+    transform: rotate(-45deg);
+}
+
+.sunflower::before {
+    top: 30px;
+    left: -30px;
+    transform: rotate(-45deg);
+}
+
+/* Animación de crecimiento */
+@keyframes grow {
+    to {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+}
+
+/* Estilo para el mensaje */
+.message {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #4B0082;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    opacity: 1; /* El mensaje está siempre visible */
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
